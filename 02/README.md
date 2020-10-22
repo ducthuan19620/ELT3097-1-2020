@@ -15,3 +15,15 @@ Source
 
 * [AndroidManifest](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/BuiDucThuan/Doulingo/app/src/main/AndroidManifest.xml)
 
+**2.Nguyễn Văn Tùng
+
+![Giao diện](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/02/NguyenVanTung_gif.png)
+
+Source
+
+* [MainActivity](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/NguyenVanTung/Doulingo/app/src/main/java/com/example/doulingo1/MainActivity.java)
+
+* [Layout](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/NguyenVanTung/Doulingo/app/src/main/res/layout/activity_main.xml)
+
+* [AndroidManifest](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/NguyenVanTung/Doulingo/app/src/main/AndroidManifest.xml)
+
