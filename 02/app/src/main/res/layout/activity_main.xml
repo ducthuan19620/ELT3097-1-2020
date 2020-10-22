@@ -17,6 +17,7 @@
         android:layout_marginRight="8dp"
         android:background="@drawable/custom_botton"
         android:ellipsize="none"
+        android:enabled="true"
         android:fontFamily="sans-serif"
         android:text="I am fond of juice."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -39,6 +40,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/custom_botton"
+        android:enabled="true"
         android:fontFamily="sans-serif"
         android:text="I love the juice."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -57,6 +59,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/custom_botton"
+        android:enabled="true"
         android:fontFamily="sans-serif"
         android:lineSpacingExtra="10sp"
         android:text="I like coffee."
@@ -71,7 +74,7 @@
         android:id="@+id/buttonClose"
         android:layout_width="40dp"
         android:layout_height="34dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/button_close"
         android:text="X"
         android:textColor="#070707"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +82,7 @@
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.037" />
 
     <TextView
         android:id="@+id/textView_1"
@@ -123,6 +126,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/botton_check"
+        android:enabled="false"
         android:fontFamily="sans-serif"
         android:lineSpacingExtra="8sp"
         android:text="KIỂM TRA"
@@ -169,9 +173,12 @@
         android:id="@+id/textView_Result1"
         android:layout_width="222dp"
         android:layout_height="20dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="20dp"
         android:textColor="#F64B4B"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button_Check"
-        tools:layout_editor_absoluteX="29dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
