@@ -88,7 +88,6 @@
         android:id="@+id/textView_1"
         android:layout_width="249dp"
         android:layout_height="35dp"
-        android:autoText="false"
         android:fontFamily="sans-serif"
         android:text="Chọn bản dịch đúng"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -116,6 +115,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.21" />
 
+    <ProgressBar
+        android:progressBackgroundTint="#E6DCDC"
+        android:secondaryProgressTint="#54DD31"
+        android:id="@+id/determinateBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:background="#F8F4F4"
+        android:max="10"
+        android:progress="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
     <Button
         android:id="@+id/button_Check"
         style="@style/Widget.AppCompat.Button.Small"
@@ -142,43 +157,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <ProgressBar
-        android:id="@+id/determinateBar"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="300dp"
-        android:layout_height="20dp"
-        android:background="#F8F4F4"
-        android:progress="25"
-        android:progressDrawable="@android:drawable/button_onoff_indicator_on"
+    <View
+        android:id="@+id/viewResult"
+        android:layout_width="410dp"
+        android:layout_height="190dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView_Result"
-        android:layout_width="222dp"
-        android:layout_height="41dp"
+        android:layout_width="211dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="8dp"
         android:textColor="#3CEA0B"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView_Result1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewResult"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView_Result1"
-        android:layout_width="222dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="213dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="48dp"
         android:textColor="#F64B4B"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button_Check"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewResult"
+        app:layout_constraintVertical_bias="0.931" />
 </androidx.constraintlayout.widget.ConstraintLayout>

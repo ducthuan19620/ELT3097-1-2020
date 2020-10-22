@@ -3,9 +3,7 @@ package com.example.doulingo1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonCheck;
     private TextView mtextResult;
     private TextView mtextResult1;
+    private View mViewResult;
     private int state1 = 0, state2 = 0, state3 = 0;
 
 
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     mtextResult.setText("Bạn làm tốt lắm!");
                     mButtonCheck.setTextColor(getColor(R.color.Defaultcolor));
                     mButtonCheck.setText("TIẾP TỤC");
+                    mViewResult.setBackgroundColor(getColor(R.color.Viewtrue));
                 }
                 else{
                     mButtonCheck.setText("TIẾP TỤC");
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     mtextResult.setTextColor(getColor(R.color.Wrongcolor));
                     mtextResult1.setText("I like coffee.");
                     mtextResult1.setTextColor(getColor(R.color.Wrongcolor));
+                    mViewResult.setBackgroundColor(getColor(R.color.Viewfalse));
                 }
             }
         });
@@ -129,5 +130,6 @@ public class MainActivity extends AppCompatActivity {
         mButtonCheck = findViewById(R.id.button_Check);
         mtextResult = findViewById(R.id.textView_Result);
         mtextResult1 = findViewById(R.id.textView_Result1);
+        mViewResult = findViewById(R.id.viewResult);
     }
 }
