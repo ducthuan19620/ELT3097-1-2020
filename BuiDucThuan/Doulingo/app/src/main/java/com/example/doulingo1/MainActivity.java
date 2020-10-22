@@ -2,9 +2,8 @@ package com.example.doulingo1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonCheck;
     private TextView mtextResult;
     private TextView mtextResult1;
+    private View mViewResult;
     private int state1 = 0, state2 = 0, state3 = 0;
 
 
@@ -26,6 +26,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         addAction();
+        addCheck();
+    }
+
+    private void addCheck() {
+        mButtonCheck.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onClick(View v) {
+                mButton1.setEnabled(false);
+                mButton2.setEnabled(false);
+                mButton3.setEnabled(false);
+                if (state3 % 2 == 1){
+                    mtextResult.setText("Bạn làm tốt lắm!");
+                    mButtonCheck.setTextColor(getColor(R.color.Defaultcolor));
+                    mButtonCheck.setText("TIẾP TỤC");
+                    mViewResult.setBackgroundColor(getColor(R.color.Viewtrue));
+                }
+                else{
+                    mButtonCheck.setText("TIẾP TỤC");
+                    mButtonCheck.setTextColor(getColor(R.color.Defaultcolor));
+                    mButtonCheck.setBackgroundResource(R.drawable.botton_checkfaulse);
+                    mtextResult.setText("Trả lời đúng:");
+                    mtextResult.setTextColor(getColor(R.color.Wrongcolor));
+                    mtextResult1.setText("I like coffee.");
+                    mtextResult1.setTextColor(getColor(R.color.Wrongcolor));
+                    mViewResult.setBackgroundColor(getColor(R.color.Viewfalse));
+                }
+            }
+        });
     }
 
     private void addAction() {
@@ -38,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
                     mButton3.setBackgroundResource(R.drawable.custom_botton);
                     mButtonCheck.setBackgroundResource(R.drawable.select_check);
                     mButtonCheck.setTextColor(getColor(R.color.Defaultcolor));
+                    mButtonCheck.setEnabled(true);
                     state2 = 0;
                     state3 = 0;
                 }
                 else {
+                    mButtonCheck.setEnabled(false);
                     mButton1.setBackgroundResource(R.drawable.custom_botton);
                     mButtonCheck.setBackgroundResource(R.drawable.botton_check);
                 }
@@ -57,10 +88,12 @@ public class MainActivity extends AppCompatActivity {
                     mButton3.setBackgroundResource(R.drawable.custom_botton);
                     mButtonCheck.setBackgroundResource(R.drawable.select_check);
                     mButtonCheck.setTextColor(getColor(R.color.Defaultcolor));
+                    mButtonCheck.setEnabled(true);
                     state1 = 0;
                     state3 = 0;
                 }
                 else {
+                    mButtonCheck.setEnabled(false);
                     mButton2.setBackgroundResource(R.drawable.custom_botton);
                     mButtonCheck.setBackgroundResource(R.drawable.botton_check);
                 }
@@ -71,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(state3 % 2 == 0){
+                    mButtonCheck.setEnabled(true);
                     mButton3.setBackgroundResource(R.drawable.select_button);
                     mButton1.setBackgroundResource(R.drawable.custom_botton);
                     mButton2.setBackgroundResource(R.drawable.custom_botton);
@@ -80,27 +114,11 @@ public class MainActivity extends AppCompatActivity {
                     state2 = 0;
                 }
                 else {
+                    mButtonCheck.setEnabled(false);
                     mButton3.setBackgroundResource(R.drawable.custom_botton);
                     mButtonCheck.setBackgroundResource(R.drawable.botton_check);
                 }
                 state3++;
-            }
-        });
-        mButtonCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (state3 % 2 == 1){
-                    mtextResult.setText("Bạn làm tốt lắm!");
-                    mButtonCheck.setTextColor(getColor(R.color.Defaultcolor));
-                    mButtonCheck.setText("TIẾP TỤC");
-                }
-                else{
-                    mButtonCheck.setTextColor(getColor(R.color.Defaultcolor));
-                    mButtonCheck.setBackgroundResource(R.drawable.botton_checkfaulse);
-                    mtextResult.setText("Trả lời đúng:");
-                    mtextResult.setTextColor(getColor(R.color.Wrongcolor));
-                    mtextResult1.setText("I like coffee.");
-                }
             }
         });
     }
@@ -111,5 +129,7 @@ public class MainActivity extends AppCompatActivity {
         mButton3 = findViewById(R.id.button_3);
         mButtonCheck = findViewById(R.id.button_Check);
         mtextResult = findViewById(R.id.textView_Result);
+        mtextResult1 = findViewById(R.id.textView_Result1);
+        mViewResult = findViewById(R.id.viewResult);
     }
 }

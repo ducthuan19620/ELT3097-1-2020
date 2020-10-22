@@ -8,4 +8,6 @@
     <color name="Closecolor">#FFFFFF</color>
     <color name="Defaultcolor">#FFFFFF</color>
     <color name="Wrongcolor">#FA2F2F</color>
+    <color name="Viewtrue">#C3FAC2</color>
+    <color name="Viewfalse">#FFD7D7</color>
 </resources>
