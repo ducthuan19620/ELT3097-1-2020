@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="Resultcolor">#88D9E4</color>
-    <color name="Checkcolor">#68EC6F</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="Resulttrue">#58a700</color>
+    <color name="Checkcolor">#57cc02</color>
     <color name="Closecolor">#FFFFFF</color>
     <color name="Defaultcolor">#FFFFFF</color>
-    <color name="Wrongcolor">#FA2F2F</color>
-    <color name="Viewtrue">#C3FAC2</color>
-    <color name="Viewfalse">#FFD7D7</color>
+    <color name="Checkwrong">#ff4b4c</color>
+    <color name="Resultwrong">#e92b2b</color>
+    <color name="Viewtrue">#d7ffb8</color>
+    <color name="Viewfalse">#ffdfe0</color>
+    <color name="Selectbutton">#ddf3fe</color>
+    <color name="stokeSelectbutton">#84d7ff</color>
+    <color name="stokebutton">#e5e5e5</color>
+    <color name="chooseAnswer">#1cb0f6</color>
+    <color name="buttonCheck">#e5e5e5</color>
+    <color name="textCheck">#afafaf</color>
+    <color name="textbutton">#FF000000</color>
 </resources>
