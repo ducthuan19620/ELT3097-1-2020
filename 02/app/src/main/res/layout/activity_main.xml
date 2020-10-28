@@ -79,7 +79,7 @@
         android:textColor="#070707"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
@@ -116,15 +116,13 @@
         app:layout_constraintVertical_bias="0.21" />
 
     <ProgressBar
-        android:progressBackgroundTint="#E6DCDC"
-        android:secondaryProgressTint="#54DD31"
+        android:progressDrawable="@drawable/progressbar"
         android:id="@+id/determinateBar"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="300dp"
         android:layout_height="20dp"
-        android:background="#F8F4F4"
-        android:max="10"
-        android:progress="1"
+        android:max="8"
+        android:progress="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"
@@ -147,7 +145,7 @@
         android:text="KIỂM TRA"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#605858"
+        android:textColor="@color/textCheck"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -163,6 +161,7 @@
         android:layout_height="190dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -170,7 +169,7 @@
         android:layout_width="211dp"
         android:layout_height="34dp"
         android:layout_marginBottom="8dp"
-        android:textColor="#3CEA0B"
+        android:textColor="#58a700"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView_Result1"
@@ -193,4 +192,78 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewResult"
         app:layout_constraintVertical_bias="0.931" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutClose"
+        android:layout_width="412dp"
+        android:layout_height="735dp"
+        android:background="@color/Defaultcolor"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/backView_1"
+            android:layout_width="380dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="Bạn có chắc chắn muốn dừng lại?"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.455" />
+
+        <TextView
+            android:id="@+id/backView_2"
+            android:layout_width="380dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="Bạn sẽ mất cả quá trình!"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.532" />
+
+        <Button
+            android:id="@+id/button_Back"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/button_back"
+            android:text="TRỞ VỀ"
+            android:textColor="@color/Defaultcolor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/button_Stop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.542"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_Stop"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="96dp"
+            android:background="#FFFFFF"
+            android:text="DỪNG LẠI"
+            android:textColor="@color/Checkwrong"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
