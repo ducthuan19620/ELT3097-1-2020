@@ -9,9 +9,9 @@ Môn học Lập trình cho thiết bị di động
 
 Source
 
-* [MainActivity](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/BuiDucThuan/Doulingo/app/src/main/java/com/example/doulingo1/MainActivity.java)
+* [Activity](https://github.com/ducthuan19620/ELT3097-1-2020/tree/master/BuiDucThuan/Doulingo/app/src/main/java/DucThuan/duolingo)
 
-* [Layout](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/BuiDucThuan/Doulingo/app/src/main/res/layout/activity_main.xml)
+* [Layout](https://github.com/ducthuan19620/ELT3097-1-2020/tree/master/BuiDucThuan/Doulingo/app/src/main/res/layout)
 
 * [AndroidManifest](https://github.com/ducthuan19620/ELT3097-1-2020/blob/master/BuiDucThuan/Doulingo/app/src/main/AndroidManifest.xml)
 
