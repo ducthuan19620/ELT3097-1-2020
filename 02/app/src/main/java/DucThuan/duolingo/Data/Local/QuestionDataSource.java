@@ -47,7 +47,7 @@ public class QuestionDataSource implements DataSource.Local {
         answer.add("They eat rice");
         answer.add("We eat bread");
         answer.add("He eats cake");
-        answer.add("She eat rice");
+        answer.add("She eats rice");
         answer.add("I like coffee");
         answer.add("They like tea");
         answer.add("They like rice");
@@ -103,4 +103,15 @@ public class QuestionDataSource implements DataSource.Local {
     public ArrayList<String> getAnswer() {
         return answer;
     }
+
+    @Override
+    public ArrayList<String> getChoice1() {
+        return choice1;
+    }
+
+    @Override
+    public ArrayList<String> getChoice2() {
+        return choice2;
+    }
+
 }

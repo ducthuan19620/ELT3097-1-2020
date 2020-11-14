@@ -2,11 +2,14 @@ package DucThuan.duolingo.UI.tasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.orhanobut.hawk.Hawk;
 
@@ -16,6 +19,7 @@ import java.util.Random;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,12 +44,23 @@ public class MutipleChoice extends AppCompatActivity {
     @BindView(R.id.choice_3)
     Button choice3;
 
+    @BindView(R.id.task_notice)
+    RelativeLayout taskNotice;
+
+    @BindView(R.id.notice)
+    TextView notice;
+
+    @BindView(R.id.notice_answer)
+    TextView noticeAnswer;
+
     QuestionModel questionModel;
 
     int progressBarValue;
     int state1 = 0, state2 = 0, state3 = 0, stateChoose = 0;
 
     Repository repository;
+
+    Context context = MutipleChoice.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +113,6 @@ public class MutipleChoice extends AppCompatActivity {
         checkChoice();
         chooseChoice();
         checkAnswer();
-        enableButton();
     }
 
     private Button checkChoice() {
@@ -117,7 +131,7 @@ public class MutipleChoice extends AppCompatActivity {
         choice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(state1 % 2 == 0){
+                if (state1 % 2 == 0){
                     choice1.setBackgroundResource(R.drawable.choice_selected);
                     choice1.setTextColor(getColor(R.color.blue_background));
 
@@ -150,7 +164,7 @@ public class MutipleChoice extends AppCompatActivity {
         choice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(state2 % 2 == 0){
+                if (state2 % 2 == 0){
                     choice2.setBackgroundResource(R.drawable.choice_selected);
                     choice2.setTextColor(getColor(R.color.blue_background));
 
@@ -183,7 +197,7 @@ public class MutipleChoice extends AppCompatActivity {
         choice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(state3 % 2 == 0){
+                if (state3 % 2 == 0){
                     choice3.setBackgroundResource(R.drawable.choice_selected);
                     choice3.setTextColor(getColor(R.color.blue_background));
 
@@ -216,9 +230,96 @@ public class MutipleChoice extends AppCompatActivity {
 
     private void checkAnswer() {
 
+        checkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                choice1.setEnabled(false);
+                choice2.setEnabled(false);
+                choice3.setEnabled(false);
+
+                if (checkButton.getText().equals("KIỂM TRA")) {
+
+                    if (checkChoice().getCurrentTextColor() == (getColor(R.color.blue_background))) {
+
+                        /*Toast.makeText(context, "You Are Correct!", Toast.LENGTH_SHORT).show();*/
+
+                        taskNotice.setVisibility(view.VISIBLE);
+                        taskNotice.setBackgroundColor(getColor(R.color.notice_true));
+
+                        notice.setText("Chính xác!");
+                        notice.setTextColor(getColor(R.color.notice_green));
+
+                        noticeAnswer.setVisibility(view.INVISIBLE);
+
+                        checkButton.setBackground(getDrawable(R.drawable.button_continue_true));
+
+                        progressBarValue += 10;
+
+                        progressBar.setProgress(progressBarValue);
+
+                        Hawk.put("progressBarValue", progressBarValue);
+
+                    } else {
+
+                        /*Toast.makeText(context, "That's not correct!" + questionModel.getAnswer(), Toast.LENGTH_SHORT).show();*/
+
+                        taskNotice.setVisibility(view.VISIBLE);
+                        taskNotice.setBackgroundColor(getColor(R.color.notice_false));
+
+                        notice.setText("Trả lời đúng:");
+                        notice.setTextColor(getColor(R.color.notice_red));
+
+                        noticeAnswer.setText(questionModel.getAnswer());
+                        noticeAnswer.setTextColor(getColor(R.color.notice_red));
+
+                        checkButton.setBackground(getDrawable(R.drawable.button_continue_false));
+
+
+                        /*if (progressBarValue > 10) {
+
+                            progressBarValue -= 10;
+
+                        } else {
+
+                            progressBarValue = 0;
+                        }*/
+
+                        progressBar.setProgress(progressBarValue);
+
+                        Hawk.put("progressBarValue", progressBarValue);
+                    }
+
+                    checkButton.setText("TIẾP TỤC");
+                    checkButton.setTextColor(getResources().getColor(R.color.button_task_continue));
+
+                } else if (checkButton.getText().equals("TIẾP TỤC")) {
+
+                    if (progressBarValue < 100) {
+
+                        ActivityNavigation.getInstance(context).takeToRandomTask();
+
+                    } else {
+
+                        progressBarValue = 0;
+
+                        Hawk.put("progressBarValue", progressBarValue);
+                    }
+
+                }
+            }
+        });
     }
 
-    private void enableButton() {
+    @Override
+    protected void onStop() {
 
+        progressBarValue = 0;
+
+        Hawk.put("progressBarValue", progressBarValue);
+
+        finish();
+
+        super.onStop();
     }
 }

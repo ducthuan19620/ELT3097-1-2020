@@ -80,8 +80,8 @@
         android:id="@+id/task_notice"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/choice_3"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/task_default_body"
+        android:layout_marginTop="250dp"
         android:visibility="invisible">
 
         <TextView
