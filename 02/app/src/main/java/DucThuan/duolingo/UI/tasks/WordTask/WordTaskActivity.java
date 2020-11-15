@@ -54,6 +54,9 @@ public class WordTaskActivity extends AppCompatActivity {
     @BindView(R.id.task_progress_bar)
     ProgressBar progressBar;
 
+    @BindView(R.id.close_task)
+    Button closeTask;
+
     @BindView(R.id.task_notice)
     RelativeLayout taskNotice;
 
@@ -91,6 +94,7 @@ public class WordTaskActivity extends AppCompatActivity {
 
         initCustomLayout();
         initData();
+        exitTask();
     }
 
     private class TouchListener implements View.OnTouchListener {
@@ -329,13 +333,38 @@ public class WordTaskActivity extends AppCompatActivity {
         }
     }
 
+    private void exitTask() {
+        closeTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(WordTaskActivity.this)
+                        .title("Bạn có chắc không?")
+                        .content("Tất cả tiến trình trong bài học này sẽ bị mất.")
+                        .positiveText("THOÁT")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
+                                progressBarValue = 0;
+
+                                Hawk.put("progressBarValue", progressBarValue);
+
+                                finish();
+                            }
+                        })
+                        .negativeText("HỦY")
+                        .show();
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
 
         new MaterialDialog.Builder(this)
-                .title("Are you sure about that?")
-                .content("All progress in this lesson will be lost.")
-                .positiveText("QUIT")
+                .title("Bạn có chắc không?")
+                .content("Tất cả tiến trình trong bài học này sẽ bị mất.")
+                .positiveText("THOÁT")
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -347,7 +376,7 @@ public class WordTaskActivity extends AppCompatActivity {
                         finish();
                     }
                 })
-                .negativeText("CANCEL")
+                .negativeText("HỦY")
                 .show();
     }
 

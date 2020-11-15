@@ -1,5 +1,6 @@
 package DucThuan.duolingo.UI.tasks;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.ArrayList;
@@ -19,6 +22,7 @@ import java.util.Random;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
@@ -34,6 +38,9 @@ public class MutipleChoice extends AppCompatActivity {
 
     @BindView(R.id.task_progress_bar)
     ProgressBar progressBar;
+
+    @BindView(R.id.close_task)
+    Button closeTask;
 
     @BindView(R.id.choice_1)
     Button choice1;
@@ -70,6 +77,7 @@ public class MutipleChoice extends AppCompatActivity {
         ButterKnife.bind(this);
 
         initData();
+        exitTask();
     }
 
     private void initData() {
@@ -310,6 +318,54 @@ public class MutipleChoice extends AppCompatActivity {
             }
         });
     }
+
+    private void exitTask() {
+        closeTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(MutipleChoice.this)
+                        .title("Bạn có chắc không?")
+                        .content("Tất cả tiến trình trong bài học này sẽ bị mất.")
+                        .positiveText("THOÁT")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
+                                progressBarValue = 0;
+
+                                Hawk.put("progressBarValue", progressBarValue);
+
+                                finish();
+                            }
+                        })
+                        .negativeText("HỦY")
+                        .show();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        new MaterialDialog.Builder(this)
+                .title("Bạn có chắc không?")
+                .content("Tất cả tiến trình trong bài học này sẽ bị mất.")
+                .positiveText("THOÁT")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
+                        progressBarValue = 0;
+
+                        Hawk.put("progressBarValue", progressBarValue);
+
+                        finish();
+                    }
+                })
+                .negativeText("HỦY")
+                .show();
+    }
+
 
     @Override
     protected void onStop() {
