@@ -1,6 +1,7 @@
 package DucThuan.duolingo.UI.tasks.WordTask;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -26,7 +27,9 @@ import java.util.Random;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.LessonListActivity;
 import DucThuan.duolingo.UI.tasks.CustomWord;
+import DucThuan.duolingo.UI.tasks.MutipleChoice;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
@@ -53,6 +56,9 @@ public class WordTaskActivity extends AppCompatActivity {
 
     @BindView(R.id.task_progress_bar)
     ProgressBar progressBar;
+
+    @BindView(R.id.close_task)
+    Button closeTask;
 
     @BindView(R.id.task_notice)
     RelativeLayout taskNotice;
@@ -91,6 +97,7 @@ public class WordTaskActivity extends AppCompatActivity {
 
         initCustomLayout();
         initData();
+        exitTask();
     }
 
     private class TouchListener implements View.OnTouchListener {
@@ -329,13 +336,39 @@ public class WordTaskActivity extends AppCompatActivity {
         }
     }
 
+    private void exitTask() {
+        closeTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(WordTaskActivity.this)
+                        .title("Bạn có chắc không?")
+                        .content("Tất cả tiến trình trong bài học này sẽ bị mất.")
+                        .positiveText("THOÁT")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
+                                progressBarValue = 0;
+
+                                Hawk.put("progressBarValue", progressBarValue);
+
+                                Intent intent = new Intent(WordTaskActivity.this, LessonListActivity.class);
+                                startActivity(intent);
+                            }
+                        })
+                        .negativeText("HỦY")
+                        .show();
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
 
         new MaterialDialog.Builder(this)
-                .title("Are you sure about that?")
-                .content("All progress in this lesson will be lost.")
-                .positiveText("QUIT")
+                .title("Bạn có chắc không?")
+                .content("Tất cả tiến trình trong bài học này sẽ bị mất.")
+                .positiveText("THOÁT")
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -344,10 +377,11 @@ public class WordTaskActivity extends AppCompatActivity {
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        finish();
+                        Intent intent = new Intent(WordTaskActivity.this, LessonListActivity.class);
+                        startActivity(intent);
                     }
                 })
-                .negativeText("CANCEL")
+                .negativeText("HỦY")
                 .show();
     }
 

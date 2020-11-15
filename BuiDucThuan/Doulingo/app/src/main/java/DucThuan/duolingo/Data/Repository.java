@@ -59,6 +59,16 @@ public class Repository implements DataSource.Local, DataSource.Remote {
     }
 
     @Override
+    public ArrayList<String> getChoice1() {
+        return dataSourceLocal.getChoice1();
+    }
+
+    @Override
+    public ArrayList<String> getChoice2() {
+        return dataSourceLocal.getChoice2();
+    }
+
+    @Override
     public void setNewLanguage(String language) {
         dataSourceRemote.setNewLanguage(language);
     }

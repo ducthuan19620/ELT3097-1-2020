@@ -17,6 +17,10 @@ public interface DataSource {
         QuestionModel getRandomQuestionObj();
 
         ArrayList<String> getAnswer();
+
+        ArrayList<String> getChoice1();
+
+        ArrayList<String> getChoice2();
     }
 
     interface Remote {
