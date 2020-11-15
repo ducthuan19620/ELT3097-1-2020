@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,6 +24,7 @@ import com.orhanobut.hawk.Hawk;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.LessonListActivity;
 import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
@@ -239,7 +241,8 @@ public class TSTaskActivity extends AppCompatActivity{
 
                                 Hawk.put("progressBarValue", progressBarValue);
 
-                                finish();
+                                Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
+                                startActivity(intent);
                             }
                         })
                         .negativeText("HỦY")
@@ -263,7 +266,8 @@ public class TSTaskActivity extends AppCompatActivity{
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        finish();
+                        Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .negativeText("HỦY")

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,7 @@ import java.util.Random;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.LessonListActivity;
 import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
@@ -335,7 +337,8 @@ public class MutipleChoice extends AppCompatActivity {
 
                                 Hawk.put("progressBarValue", progressBarValue);
 
-                                finish();
+                                Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                                startActivity(intent);
                             }
                         })
                         .negativeText("HỦY")
@@ -359,7 +362,8 @@ public class MutipleChoice extends AppCompatActivity {
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        finish();
+                        Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .negativeText("HỦY")
