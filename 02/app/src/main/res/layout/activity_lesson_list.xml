@@ -16,20 +16,10 @@
             android:id="@+id/current_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Spanish"
+            android:text="English"
             android:textSize="17sp"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:textColor="#000"/>
-
-        <TextView
-            android:id="@+id/overall_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Overall Progress: 23%"
-            android:textSize="17sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
             android:textColor="#000"/>
 
     </RelativeLayout>
@@ -57,7 +47,14 @@
                     style="@style/lesson_bar_text"
                     android:layout_below="@id/basic_bar"
                     android:layout_centerHorizontal="true"
-                    android:text="Basics" />
+                    android:text="Cơ bản1" />
+
+                <Button
+                    android:id="@+id/basic1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/basic1" />
 
             </RelativeLayout>
 
@@ -84,7 +81,16 @@
                         android:layout_below="@id/phrases_bar"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="5dp"
-                        android:text="Phrases" />
+                        android:text="Cơ bản2" />
+
+                    <Button
+                        android:id="@+id/basic2"
+                        android:layout_width="73dp"
+                        android:layout_height="74dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginVertical="3dp"
+                        android:background="@drawable/basic2" />
 
                 </RelativeLayout>
 
@@ -105,7 +111,16 @@
                         android:layout_below="@id/greeting_bar"
                         android:layout_alignParentStart="true"
                         android:paddingStart="5dp"
-                        android:text="Greeting" />
+                        android:text="Cơ bản3" />
+
+                    <Button
+                        android:id="@+id/basic3"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginVertical="2dp"
+                        android:background="@drawable/basic3" />
 
                 </RelativeLayout>
 
@@ -133,8 +148,17 @@
                         style="@style/lesson_bar_text"
                         android:layout_alignStart="@+id/food_bar"
                         android:layout_below="@+id/food_bar"
-                        android:layout_marginStart="16dp"
-                        android:text="Food" />
+                        android:layout_marginStart="8dp"
+                        android:text="Món ăn" />
+
+                    <Button
+                        android:id="@+id/food"
+                        android:layout_width="72dp"
+                        android:layout_height="73dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginVertical="3dp"
+                        android:background="@drawable/food" />
 
                 </RelativeLayout>
 
@@ -154,8 +178,17 @@
                         style="@style/lesson_bar_text"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/animal_bar"
-                        android:layout_marginStart="12dp"
-                        android:text="Animal" />
+                        android:layout_marginStart="2dp"
+                        android:text="Động vật" />
+
+                    <Button
+                        android:id="@+id/animal"
+                        android:layout_width="71dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginVertical="5dp"
+                        android:background="@drawable/animal" />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -168,27 +201,22 @@
                 <DucThuan.duolingo.Utils.CustomProgressBar
                     android:id="@+id/clothing_bar"
                     style="@style/lesson_bar"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     style="@style/lesson_bar_text"
                     android:layout_below="@id/clothing_bar"
                     android:layout_centerHorizontal="true"
-                    android:text="Clothing" />
+                    android:text="Trang phục" />
+
+                <Button
+                    android:id="@+id/clothing"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/clothing" />
 
             </RelativeLayout>
-
-            <Button
-                android:id="@+id/shortcut_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TAKE A SHORTCUT"
-                android:layout_marginTop="50dp"
-                android:layout_gravity="center"
-                android:textSize="17sp"
-                android:layout_marginBottom="150dp"
-                android:background="@drawable/button_continue_true"
-                android:textColor="@color/white_text"/>
 
         </LinearLayout>
 
