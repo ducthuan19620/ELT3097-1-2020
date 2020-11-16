@@ -352,8 +352,7 @@ public class WordTaskActivity extends AppCompatActivity {
 
                                 Hawk.put("progressBarValue", progressBarValue);
 
-                                Intent intent = new Intent(WordTaskActivity.this, LessonListActivity.class);
-                                startActivity(intent);
+                                activityNavigation.lessonListActivity();
                             }
                         })
                         .negativeText("HỦY")
@@ -377,8 +376,7 @@ public class WordTaskActivity extends AppCompatActivity {
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        Intent intent = new Intent(WordTaskActivity.this, LessonListActivity.class);
-                        startActivity(intent);
+                        activityNavigation.lessonListActivity();
                     }
                 })
                 .negativeText("HỦY")

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import DucThuan.duolingo.UI.activity.LessonCompletedActivity;
+import DucThuan.duolingo.UI.activity.LessonListActivity;
 import DucThuan.duolingo.UI.tasks.MutipleChoice;
 import DucThuan.duolingo.UI.tasks.TSTaskActivity;
 import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
@@ -55,6 +56,12 @@ public class ActivityNavigation {
     public void lessonCompleted() {
 
         Intent intent = new Intent(context, LessonCompletedActivity.class);
+        context.startActivity(intent);
+    }
+
+    public void lessonListActivity(){
+
+        Intent intent = new Intent(context, LessonListActivity.class);
         context.startActivity(intent);
     }
 }

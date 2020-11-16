@@ -61,6 +61,8 @@ public class TSTaskActivity extends AppCompatActivity{
 
     int progressBarValue;
 
+    ActivityNavigation activityNavigation;
+
     Repository repository;
 
     Context context = TSTaskActivity.this;
@@ -179,6 +181,8 @@ public class TSTaskActivity extends AppCompatActivity{
                         progressBarValue = 0;
 
                         Hawk.put("progressBarValue", progressBarValue);
+
+                        activityNavigation.lessonCompleted();
                     }
 
                 }
@@ -241,8 +245,7 @@ public class TSTaskActivity extends AppCompatActivity{
 
                                 Hawk.put("progressBarValue", progressBarValue);
 
-                                Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
-                                startActivity(intent);
+                                activityNavigation.lessonListActivity();
                             }
                         })
                         .negativeText("HỦY")
@@ -266,8 +269,7 @@ public class TSTaskActivity extends AppCompatActivity{
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
-                        startActivity(intent);
+                        activityNavigation.lessonListActivity();
                     }
                 })
                 .negativeText("HỦY")

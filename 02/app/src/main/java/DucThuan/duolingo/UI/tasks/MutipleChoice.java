@@ -67,6 +67,8 @@ public class MutipleChoice extends AppCompatActivity {
     int progressBarValue;
     int state1 = 0, state2 = 0, state3 = 0, stateChoose = 0;
 
+    ActivityNavigation activityNavigation;
+
     Repository repository;
 
     Context context = MutipleChoice.this;
@@ -252,7 +254,7 @@ public class MutipleChoice extends AppCompatActivity {
 
                     if (checkChoice().getCurrentTextColor() == (getColor(R.color.blue_background))) {
 
-                        /*Toast.makeText(context, "You Are Correct!", Toast.LENGTH_SHORT).show();*/
+                        /*Toast.makeText(context, "Thuần chào mọi người!!!", Toast.LENGTH_SHORT).show();*/
 
                         taskNotice.setVisibility(view.VISIBLE);
                         taskNotice.setBackgroundColor(getColor(R.color.notice_true));
@@ -272,7 +274,7 @@ public class MutipleChoice extends AppCompatActivity {
 
                     } else {
 
-                        /*Toast.makeText(context, "That's not correct!" + questionModel.getAnswer(), Toast.LENGTH_SHORT).show();*/
+                        /*Toast.makeText(context, "Thuần sửa mãi mới được đó!!!" + questionModel.getAnswer(), Toast.LENGTH_SHORT).show();*/
 
                         taskNotice.setVisibility(view.VISIBLE);
                         taskNotice.setBackgroundColor(getColor(R.color.notice_false));
@@ -337,8 +339,7 @@ public class MutipleChoice extends AppCompatActivity {
 
                                 Hawk.put("progressBarValue", progressBarValue);
 
-                                Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
-                                startActivity(intent);
+                                activityNavigation.lessonListActivity();
                             }
                         })
                         .negativeText("HỦY")
@@ -362,8 +363,7 @@ public class MutipleChoice extends AppCompatActivity {
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
-                        startActivity(intent);
+                        activityNavigation.lessonListActivity();
                     }
                 })
                 .negativeText("HỦY")
