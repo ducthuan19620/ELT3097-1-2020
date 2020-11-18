@@ -3,6 +3,7 @@ package DucThuan.duolingo.UI.activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,6 +41,7 @@ public class PickDailyGoalActivity extends AppCompatActivity {
 
     ArrayList<RadioButton> radioButtonArray = new ArrayList<>();
 
+    ActivityNavigation activityNavigation;
     int checkedButton;
 
     Repository repository;
@@ -106,6 +109,9 @@ public class PickDailyGoalActivity extends AppCompatActivity {
                 if(checkedButton == 3) dailyGoal = 50; else dailyGoal = (checkedButton + 1) * 10;
 
                 repository.setDailyGoal(dailyGoal);
+
+                Intent intent = new Intent(PickDailyGoalActivity.this, LessonListActivity.class);
+                startActivity(intent);
             }
         });
     }
