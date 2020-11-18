@@ -22,7 +22,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     private static final String TAG = "LanguageAdapter";
 
     String[] languages = {
-            "Spanish", "Portuguese", "Swedish", "French",
+            "English", "Spanish", "Portuguese", "Swedish", "French",
             "German", "Chinese", "Japanese", "Korean", "Italian",
             "Dutch", "Irish", "Danish"};
 
