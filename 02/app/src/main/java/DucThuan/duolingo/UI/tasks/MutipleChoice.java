@@ -339,7 +339,8 @@ public class MutipleChoice extends AppCompatActivity {
 
                                 Hawk.put("progressBarValue", progressBarValue);
 
-                                activityNavigation.lessonListActivity();
+                                Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                                startActivity(intent);
                             }
                         })
                         .negativeText("HỦY")
@@ -363,7 +364,8 @@ public class MutipleChoice extends AppCompatActivity {
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        activityNavigation.lessonListActivity();
+                        Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .negativeText("HỦY")

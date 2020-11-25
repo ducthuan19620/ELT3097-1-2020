@@ -245,7 +245,8 @@ public class TSTaskActivity extends AppCompatActivity{
 
                                 Hawk.put("progressBarValue", progressBarValue);
 
-                                activityNavigation.lessonListActivity();
+                                Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
+                                startActivity(intent);
                             }
                         })
                         .negativeText("HỦY")
@@ -269,7 +270,8 @@ public class TSTaskActivity extends AppCompatActivity{
 
                         Hawk.put("progressBarValue", progressBarValue);
 
-                        activityNavigation.lessonListActivity();
+                        Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .negativeText("HỦY")

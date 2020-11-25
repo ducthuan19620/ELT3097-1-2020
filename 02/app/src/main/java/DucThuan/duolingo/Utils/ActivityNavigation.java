@@ -59,10 +59,5 @@ public class ActivityNavigation {
         context.startActivity(intent);
     }
 
-    public void lessonListActivity(){
-
-        Intent intent = new Intent(context, LessonListActivity.class);
-        context.startActivity(intent);
-    }
 }
 

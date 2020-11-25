@@ -19,14 +19,16 @@
 
         <activity android:name=".UI.activity.LessonListActivity"></activity>
 
-        <activity android:name=".UI.tasks.MutipleChoice" />
-
-        <activity android:name=".UI.activity.WelcomeActivity">
+        <activity android:name=".UI.tasks.MutipleChoice" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".UI.activity.WelcomeActivity">
+
         </activity>
 
         <activity android:name=".UI.tasks.WordTask.WordTaskActivity">
