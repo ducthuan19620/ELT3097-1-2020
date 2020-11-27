@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:text="Learn a language for free."
+        android:text="Học ngoại ngữ miễn phí."
         android:textColor="@color/empty_view"
         android:textSize="20sp" />
 
@@ -43,7 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:text="Forever."
+        android:text="Mãi mãi."
         android:textColor="@color/empty_view"
         android:textSize="20sp" />
 
@@ -54,7 +54,7 @@
         android:layout_above="@+id/log_in_link"
         android:layout_marginBottom="-20dp"
         android:background="@drawable/get_started_button"
-        android:text="GET STARTED"
+        android:text="BẮT ĐẦU NGAY"
         android:textColor="@color/white_text"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/log_in_link_button"
-        android:text="I ALREADY HAVE AN ACCOUNT"
+        android:text="TÔI ĐÃ CÓ TÀI KHOẢN"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="10dp"

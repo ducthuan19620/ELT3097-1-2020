@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import DucThuan.duolingo.R;
 import butterknife.BindView;
@@ -19,7 +22,10 @@ public class SelectLanguageActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     @BindView(R.id.back_button)
-    ImageView backButton;
+    Button backButton;
+
+    @BindView(R.id.progress_bar)
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +33,8 @@ public class SelectLanguageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_course);
 
         ButterKnife.bind(this);
+
+        progressBar.setProgress(1);
 
         initData();
     }

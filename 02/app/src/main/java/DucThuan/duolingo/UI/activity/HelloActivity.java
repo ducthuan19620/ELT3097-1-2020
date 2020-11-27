@@ -1,7 +1,10 @@
 package DucThuan.duolingo.UI.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+/*
+    Creat by Duc Thuan
+        26/11/2020
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;

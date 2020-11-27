@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_task_progress_bar"
+    android:id="@+id/layout_welcome_progress_bar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp">
 
     <Button
-        android:id="@+id/close_task"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/back_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginRight="8dp"
-        android:background="@drawable/ic_task_close" />
+        android:background="@drawable/ic_black_back_button" />
 
     <ProgressBar
-        android:id="@+id/task_progress_bar"
+        android:id="@+id/progress_bar"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginStart="2dp"
-        android:layout_toEndOf="@+id/close_task"
+        android:layout_toEndOf="@+id/back_button"
         android:background="@drawable/progress_bar"
-        android:max="100"
+        android:max="5"
+        android:progress="0"
         android:progressBackgroundTint="@color/grey_button"
         android:progressTint="@color/green_button" />
 
