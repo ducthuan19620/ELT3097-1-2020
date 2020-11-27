@@ -111,6 +111,7 @@ public class PickDailyGoalActivity extends AppCompatActivity {
                 repository.setDailyGoal(dailyGoal);
 
                 Intent intent = new Intent(PickDailyGoalActivity.this, LessonListActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

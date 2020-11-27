@@ -16,35 +16,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".UI.activity.LessonListActivity"></activity>
-
-        <activity android:name=".UI.tasks.MutipleChoice" >
+        <activity android:name=".UI.activity.HelloActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".UI.activity.WelcomeActivity">
 
         </activity>
 
-        <activity android:name=".UI.tasks.WordTask.WordTaskActivity">
-
-        </activity>
-
-        <activity
-            android:name=".UI.tasks.TSTaskActivity"
-            android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".UI.activity.LessonCompletedActivity" />
-
-        <activity android:name=".UI.activity.SignInActivity" />
+        <activity android:name=".UI.activity.SignInActivity"></activity>
 
         <activity android:name=".UI.activity.SelectLanguageActivity.SelectLanguageActivity" />
 
         <activity android:name=".UI.activity.PickDailyGoalActivity" />
+        <activity
+            android:name=".UI.activity.LessonListActivity"
+            android:launchMode="standard"></activity>
+
+        <activity
+            android:name=".UI.tasks.MutipleChoice"
+            android:launchMode="standard"></activity>
+        <activity
+            android:name=".UI.tasks.WordTask.WordTaskActivity"
+            android:launchMode="standard"></activity>
+        <activity
+            android:name=".UI.tasks.TSTaskActivity"
+            android:launchMode="standard"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".UI.activity.LessonCompletedActivity"
+            android:launchMode="standard" />
     </application>
 
 </manifest>

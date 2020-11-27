@@ -7,13 +7,10 @@
         android:right="2dp"
         android:top="2dp">
         <shape android:shape="rectangle" >
-            <stroke
-                android:width="2dp"
-                android:color="#c4ffffff" />
 
-            <corners android:radius="50dp" />
+            <corners android:radius="10dp" />
 
-            <solid android:color="#fff" />
+            <solid android:color="@color/green_button" />
 
             <padding android:left="15dp"
                 android:right="15dp"

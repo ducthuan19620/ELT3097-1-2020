@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,8 +26,10 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.orhanobut.hawk.Hawk;
 
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.SelectLanguageActivity.SelectLanguageActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
@@ -74,7 +77,7 @@ public class SignInActivity extends AppCompatActivity {
         mAuth = Injection.providesAuthHelper().getAuthInstance();
 
         authUser();
-//        instantiateGoogle();
+        instantiateGoogle();
         googleSignInListener();
 
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -168,12 +171,12 @@ public class SignInActivity extends AppCompatActivity {
 
     private void instantiateGoogle() {
 
-//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestIdToken(getString(R.string.default_web_client_id))
-//                .requestEmail()
-//                .build();
-//
-//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
     private void googleSignInListener() {
@@ -201,7 +204,9 @@ public class SignInActivity extends AppCompatActivity {
 
             } catch (ApiException e) {
 
-                Toast.makeText(context, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SignInActivity.this, SelectLanguageActivity.class);
+                startActivity(intent);
             }
         }
     }
@@ -226,5 +231,11 @@ public class SignInActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    @Override
+    protected void onStop() {
+        finish();
+        super.onStop();
     }
 }

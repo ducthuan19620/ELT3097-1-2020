@@ -23,6 +23,7 @@ import java.util.Random;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.LessonCompletedActivity;
 import DucThuan.duolingo.UI.activity.LessonListActivity;
 import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
@@ -313,6 +314,11 @@ public class MutipleChoice extends AppCompatActivity {
 
                     } else {
 
+                        Intent intent = new Intent(context, LessonCompletedActivity.class);
+                        startActivity(intent);
+
+                        //ActivityNavigation.getInstance(context).lessonCompleted();
+
                         progressBarValue = 0;
 
                         Hawk.put("progressBarValue", progressBarValue);
@@ -340,6 +346,7 @@ public class MutipleChoice extends AppCompatActivity {
                                 Hawk.put("progressBarValue", progressBarValue);
 
                                 Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
                         })
@@ -365,6 +372,7 @@ public class MutipleChoice extends AppCompatActivity {
                         Hawk.put("progressBarValue", progressBarValue);
 
                         Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }
                 })

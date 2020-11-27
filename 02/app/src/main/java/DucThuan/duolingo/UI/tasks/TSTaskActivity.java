@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -246,6 +248,7 @@ public class TSTaskActivity extends AppCompatActivity{
                                 Hawk.put("progressBarValue", progressBarValue);
 
                                 Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
                         })
@@ -271,6 +274,7 @@ public class TSTaskActivity extends AppCompatActivity{
                         Hawk.put("progressBarValue", progressBarValue);
 
                         Intent intent = new Intent(TSTaskActivity.this, LessonListActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }
                 })
@@ -288,5 +292,10 @@ public class TSTaskActivity extends AppCompatActivity{
         finish();
 
         super.onStop();
+    }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
     }
 }
