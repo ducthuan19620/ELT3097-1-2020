@@ -16,11 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".UI.activity.QuestionWelcome.Question2"></activity>
-        <activity android:name=".UI.activity.QuestionWelcome.Question1">
-
-        </activity>
-
         <activity android:name=".UI.activity.HelloActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,11 +23,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".UI.activity.WelcomeActivity" />
+
         <activity android:name=".UI.activity.SignInActivity" />
-        <activity android:name=".UI.activity.SelectLanguageActivity.SelectLanguageActivity">
-        </activity>
+
+        <activity android:name=".UI.activity.SelectLanguageActivity.SelectLanguageActivity"></activity>
+
+        <activity android:name=".UI.activity.QuestionWelcome.Question1"></activity>
+
+        <activity android:name=".UI.activity.QuestionWelcome.Question2"></activity>
+
         <activity android:name=".UI.activity.PickDailyGoalActivity" />
+
+        <activity android:name=".UI.activity.QuestionWelcome.Direction">
+
+        </activity>
+
         <activity
             android:name=".UI.activity.LessonListActivity"
             android:launchMode="standard" />

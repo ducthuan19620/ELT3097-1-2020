@@ -8,12 +8,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
+import android.widget.TextClock;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.QuestionWelcome.Direction;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
@@ -22,26 +27,50 @@ import butterknife.ButterKnife;
 public class PickDailyGoalActivity extends AppCompatActivity {
 
     @BindView(R.id.back_button)
-    ImageView backButton;
+    Button backButton;
+
+    @BindView(R.id.casual)
+    RelativeLayout casualGoal;
 
     @BindView(R.id.casual_goal)
-    RadioButton casualGoal;
+    TextView casual_goal;
+
+    @BindView(R.id.five_min)
+    TextView five_min;
+
+    @BindView(R.id.regular)
+    RelativeLayout regularGoal;
 
     @BindView(R.id.regular_goal)
-    RadioButton regularGoal;
+    TextView regular_goal;
+
+    @BindView(R.id.ten_min)
+    TextView ten_min;
+
+    @BindView(R.id.serious)
+    RelativeLayout seriousGoal;
 
     @BindView(R.id.serious_goal)
-    RadioButton seriousGoal;
+    TextView serious_goal;
+
+    @BindView(R.id.fif_min)
+    TextView fif_min;
+
+    @BindView(R.id.insane)
+    RelativeLayout insaneGoal;
 
     @BindView(R.id.insane_goal)
-    RadioButton insaneGoal;
+    TextView insane_goal;
+
+    @BindView(R.id.twen_min)
+    TextView twen_min;
 
     @BindView(R.id.continue_button)
     Button continueButton;
 
-    ArrayList<RadioButton> radioButtonArray = new ArrayList<>();
+    @BindView(R.id.progress_bar)
+    ProgressBar progressBar;
 
-    ActivityNavigation activityNavigation;
     int checkedButton;
 
     Repository repository;
@@ -54,48 +83,9 @@ public class PickDailyGoalActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         repository = Injection.provideRepository();
-
-        setRadioButton();
-        regularGoal.setChecked(true);
+        progressBar.setProgress(4);
 
         continueListener();
-    }
-
-    private void setRadioButton() {
-
-        radioButtonArray.add(casualGoal);
-        radioButtonArray.add(regularGoal);
-        radioButtonArray.add(seriousGoal);
-        radioButtonArray.add(insaneGoal);
-
-        for (int i = 0; i < radioButtonArray.size(); i++) {
-
-            final int finalIndex = i;
-
-            radioButtonArray.get(i).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    checkedButton = finalIndex;
-
-                    ArrayList<Integer> buttonIdx = new ArrayList<>();
-
-                    buttonIdx.add(0);
-                    buttonIdx.add(1);
-                    buttonIdx.add(2);
-                    buttonIdx.add(3);
-
-                    buttonIdx.remove(finalIndex);
-
-                    radioButtonArray.get(finalIndex).setChecked(true);
-
-                    for (int index : buttonIdx) {
-
-                        radioButtonArray.get(index).setChecked(false);
-                    }
-                }
-            });
-        }
     }
 
     private void continueListener() {
@@ -110,10 +100,81 @@ public class PickDailyGoalActivity extends AppCompatActivity {
 
                 repository.setDailyGoal(dailyGoal);
 
-                Intent intent = new Intent(PickDailyGoalActivity.this, LessonListActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Intent intent = new Intent(PickDailyGoalActivity.this, Direction.class);
                 startActivity(intent);
             }
         });
+    }
+
+    public void casual_selected(View view) {
+        casualGoal.setBackground(getDrawable(R.drawable.question_first_selected));
+        casual_goal.setTextColor(getColor(R.color.blue_stock));
+        five_min.setTextColor(getColor(R.color.blue_stock));
+
+        regularGoal.setBackground(getDrawable(R.drawable.question_view));
+        regular_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        ten_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        seriousGoal.setBackground(getDrawable(R.drawable.question_view));
+        serious_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        fif_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        insaneGoal.setBackground(getDrawable(R.drawable.question_end));
+        insane_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        twen_min.setTextColor(getColor(R.color.custom_view_text_color));
+    }
+
+    public void regular_selected(View view) {
+        casualGoal.setBackground(getDrawable(R.drawable.question_first));
+        casual_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        five_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        regularGoal.setBackground(getDrawable(R.drawable.question_view_selected));
+        regular_goal.setTextColor(getColor(R.color.blue_stock));
+        ten_min.setTextColor(getColor(R.color.blue_stock));
+
+        seriousGoal.setBackground(getDrawable(R.drawable.question_view));
+        serious_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        fif_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        insaneGoal.setBackground(getDrawable(R.drawable.question_end));
+        insane_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        twen_min.setTextColor(getColor(R.color.custom_view_text_color));
+    }
+
+    public void serious_selected(View view) {
+        casualGoal.setBackground(getDrawable(R.drawable.question_first));
+        casual_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        five_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        regularGoal.setBackground(getDrawable(R.drawable.question_view));
+        regular_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        ten_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        seriousGoal.setBackground(getDrawable(R.drawable.question_view_selected));
+        serious_goal.setTextColor(getColor(R.color.blue_stock));
+        fif_min.setTextColor(getColor(R.color.blue_stock));
+
+        insaneGoal.setBackground(getDrawable(R.drawable.question_end));
+        insane_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        twen_min.setTextColor(getColor(R.color.custom_view_text_color));
+    }
+
+    public void insane_selected(View view) {
+        casualGoal.setBackground(getDrawable(R.drawable.question_first));
+        casual_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        five_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        regularGoal.setBackground(getDrawable(R.drawable.question_view));
+        regular_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        ten_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        seriousGoal.setBackground(getDrawable(R.drawable.question_view));
+        serious_goal.setTextColor(getColor(R.color.custom_view_text_color));
+        fif_min.setTextColor(getColor(R.color.custom_view_text_color));
+
+        insaneGoal.setBackground(getDrawable(R.drawable.question_end_selected));
+        insane_goal.setTextColor(getColor(R.color.blue_stock));
+        twen_min.setTextColor(getColor(R.color.blue_stock));
     }
 }

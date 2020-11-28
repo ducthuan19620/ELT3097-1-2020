@@ -31,11 +31,13 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/friend"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/question_first"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
+            android:layout_marginRight="12dp"
+            android:onClick="Next">
 
             <ImageView
                 android:id="@+id/image_friend"
@@ -58,11 +60,13 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/brain"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/question_view"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
+            android:layout_marginRight="12dp"
+            android:onClick="Next">
 
             <ImageView
                 android:id="@+id/image_brain"
@@ -85,11 +89,13 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/school"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/question_view"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
+            android:layout_marginRight="12dp"
+            android:onClick="Next">
 
             <ImageView
                 android:id="@+id/image_school"
@@ -110,12 +116,15 @@
                 android:layout_marginLeft="20dp"/>
 
         </RelativeLayout>
+
         <RelativeLayout
+            android:id="@+id/job"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/question_view"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
+            android:layout_marginRight="12dp"
+            android:onClick="Next">
 
             <ImageView
                 android:id="@+id/image_job"
@@ -136,12 +145,15 @@
                 android:layout_marginLeft="20dp"/>
 
         </RelativeLayout>
+
         <RelativeLayout
+            android:id="@+id/cultural"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/question_view"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
+            android:layout_marginRight="12dp"
+            android:onClick="Next">
 
             <ImageView
                 android:id="@+id/image_cultural"
@@ -164,11 +176,13 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/travel"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/question_view"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
+            android:layout_marginRight="12dp"
+            android:onClick="Next">
 
             <ImageView
                 android:id="@+id/image_travel"
@@ -191,11 +205,13 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/others"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/question_end"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
+            android:layout_marginRight="12dp"
+            android:onClick="Next">
 
             <ImageView
                 android:id="@+id/image_others"
