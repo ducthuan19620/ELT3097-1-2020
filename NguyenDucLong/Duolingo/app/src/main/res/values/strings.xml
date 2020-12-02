@@ -1,30 +1,20 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Duolingo</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="ki_m_tra">kiểm tra</string>
-    <string name="n_c">nước</string>
-    <string name="x">X</string>
-    <string name="todo" tools:ignore="DuplicateDefinition">TODO</string>
-    <string name="yes_i_speak_vietnamese">Yes, I speak Vietnamese.</string>
-    <string name="b_qua">bỏ qua</string>
-    <string name="t_i">tôi</string>
-    <string name="tr">trà</string>
-    <string name="vi_t">việt</string>
-    <string name="v_ng">vâng</string>
-    <string name="n_i">nói</string>
-    <string name="c_m">cơm</string>
-    <string name="ti_ng">tiếng</string>
-    <string name="tr_i">trái</string>
-    <string name="d_ch_c_u_n_y">Dịch câu này</string>
-    <string name="button">Button</string>
-
-    <string name="ki_m_tra1">Kiểm tra</string>
+    <!-- Login/Register Screen Toast Strings -->
+    <string name="blankEditText">You must fill out all fields</string>
+    <string name="auth_failed">Wrong password or email!</string>
+    <string name="invalid_password">Your password needs to have at least 6 characters</string>
+    <string name="invalid_email">Email not valid!</string>
+    <string name="account_creation_fail"> Failed to create an account with this email. Try again later!</string>
+    <string name="account_creation_success"> Your account has been successfully created!\n Please check your email in order to confirm your account.</string>
+    <string name="email_not_verified"> You account is not verified.\n Check your email to verify it!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_lesson_list">LessonListActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>
