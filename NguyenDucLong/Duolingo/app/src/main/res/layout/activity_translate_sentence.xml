@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_light_grey_bg"
+    tools:context="DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity">
+
+    <include layout="@layout/task_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"/>
+
+    <include
+        android:id="@+id/task_default_body"
+        layout="@layout/task_default_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <EditText
+        android:id="@+id/user_answer"
+        android:hint="Type the English translation"
+        android:layout_below="@+id/task_default_body"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="start"
+        android:background="@drawable/custom_word_border"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_check"
+        android:textColor="@color/button_task_check"
+        android:textSize="17sp"
+        android:text="KIỂM TRA"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"/>
+
+    <RelativeLayout
+        android:id="@+id/task_notice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/user_answer"
+        android:layout_marginTop="255dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="16dp"
+            android:text="TextView"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:text="Đúng hoặc sai:" />
+
+        <TextView
+            android:id="@+id/notice_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notice"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="0dp"
+            android:paddingLeft="16dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            tools:text="Câu trả lời đúng" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

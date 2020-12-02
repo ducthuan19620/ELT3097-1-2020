@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <include layout="@layout/welcome_progress_bar"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn một hướng đi"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="14dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/beginner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/choice_default"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="StartTask">
+
+            <ImageView
+                android:id="@+id/beginner_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/beginner"/>
+
+            <TextView
+                android:id="@+id/beginner_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đây là lần đầu tiên bạn học\nTiếng Anh?"
+                android:textColor="@color/custom_view_text_color"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/beginner_image"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15sp"/>
+
+            <TextView
+                android:id="@+id/beginner_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bắt đầu từ bài tập cơ bản\nnhé!"
+                android:textColor="@color/custom_view_text_color"
+                android:textSize="18dp"
+                android:layout_toEndOf="@id/beginner_image"
+                android:layout_below="@id/beginner_text1"
+                android:layout_marginLeft="30dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/advance"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/choice_default"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="StartTask">
+
+            <ImageView
+                android:id="@+id/advance_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/advance"/>
+
+            <TextView
+                android:id="@+id/advance_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bạn đã biết một chút\nTiếng Anh?"
+                android:textColor="@color/custom_view_text_color"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/advance_image"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15sp"/>
+
+            <TextView
+                android:id="@+id/advance_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kiểm tra trình độ tại đây!"
+                android:textColor="@color/custom_view_text_color"
+                android:textSize="18dp"
+                android:layout_toEndOf="@id/advance_image"
+                android:layout_below="@id/advance_text1"
+                android:layout_marginLeft="30dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
