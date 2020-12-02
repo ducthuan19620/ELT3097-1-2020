@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_light_grey_bg">
+
+    <include layout="@layout/welcome_progress_bar"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bạn biết tới Duolingo qua đâu?"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="14dp"/>
+
+    <TextView
+        android:id="@+id/question_1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/text"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_first"
+        android:text="Tìm trên web"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_1"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_view"
+        android:text="TV"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_3"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_2"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_view"
+        android:text="Tin tức, báo hoặc blog"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_4"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_3"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_view"
+        android:text="Gia đình và bạn bè"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_5"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_4"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_view"
+        android:text="Mạng xã hội"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_6"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_5"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_view"
+        android:text="Đài phát thanh"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_7"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_6"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_view"
+        android:text="Quảng cáo trực tuyến"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_8"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_7"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_view"
+        android:text="Cửa hàng ứng dụng"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/question_9"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/question_8"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/question_end"
+        android:text="Khác"
+        android:textStyle="bold"
+        android:textColor="@color/custom_view_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_alignParentLeft="true"
+        android:paddingVertical="10dp"/>
+
+</RelativeLayout>

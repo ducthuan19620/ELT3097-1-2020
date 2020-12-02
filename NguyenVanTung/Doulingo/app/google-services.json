@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "156803327105",
+    "firebase_url": "https://doulingoclone-1af91.firebaseio.com",
+    "project_id": "doulingoclone-1af91",
+    "storage_bucket": "doulingoclone-1af91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156803327105:android:586134dd2f855d69a39980",
+        "android_client_info": {
+          "package_name": "e.rick.duolingoclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156803327105-o674dknu4ig7n1qv8g23q3l0542e45js.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxolbkuM5oEVoqwXGCqCoXmNrU-_IN5Cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156803327105-o674dknu4ig7n1qv8g23q3l0542e45js.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
