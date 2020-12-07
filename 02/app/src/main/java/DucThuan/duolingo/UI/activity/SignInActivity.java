@@ -26,11 +26,10 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.orhanobut.hawk.Hawk;
 
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.LessonListActivity.LessonListActivity;
 import DucThuan.duolingo.UI.activity.SelectLanguageActivity.SelectLanguageActivity;
-import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,6 +60,9 @@ public class SignInActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
 
+    public static final String EXTRA_TEXT = "com.example.application.example.EXTRA_TEXT";
+    public static final String EXTRA_NUMBER = "com.example.application.example.EXTRA_NUMBER";
+    int login = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -114,8 +116,9 @@ public class SignInActivity extends AppCompatActivity {
                                                     Toast.LENGTH_SHORT).show();
 
                                         } else {
-
+                                            login = 1;
                                             Intent intent = new Intent(SignInActivity.this, LessonListActivity.class);
+                                            intent.putExtra(EXTRA_NUMBER, login);
                                             startActivity(intent);
                                         }
                                     }
@@ -204,8 +207,11 @@ public class SignInActivity extends AppCompatActivity {
 
             } catch (ApiException e) {
 
+                login = 1;
                 //Toast.makeText(context, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignInActivity.this, SelectLanguageActivity.class);
+                Intent intent = new Intent(SignInActivity.this, LessonListActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra(EXTRA_NUMBER, login);
                 startActivity(intent);
             }
         }
@@ -223,7 +229,8 @@ public class SignInActivity extends AppCompatActivity {
                             //take me to main page
                             Toast.makeText(context, "itworked", Toast.LENGTH_SHORT).show();
 
-                            ActivityNavigation.getInstance(SignInActivity.this).takeToRandomTask();
+                            Intent intent = new Intent(SignInActivity.this, SelectLanguageActivity.class);
+                            startActivity(intent);
 
                         } else {
 

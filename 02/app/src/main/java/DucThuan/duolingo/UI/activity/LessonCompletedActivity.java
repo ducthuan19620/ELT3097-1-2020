@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import DucThuan.duolingo.R;
-import DucThuan.duolingo.UI.tasks.MutipleChoice;
+import DucThuan.duolingo.UI.activity.LessonListActivity.LessonListActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import butterknife.BindView;
 import butterknife.ButterKnife;

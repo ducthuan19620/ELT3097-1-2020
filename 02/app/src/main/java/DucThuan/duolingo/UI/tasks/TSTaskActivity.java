@@ -17,7 +17,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -26,8 +25,7 @@ import com.orhanobut.hawk.Hawk;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
-import DucThuan.duolingo.UI.activity.LessonListActivity;
-import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
+import DucThuan.duolingo.UI.activity.LessonListActivity.LessonListActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;

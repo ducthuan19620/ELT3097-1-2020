@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import DucThuan.duolingo.UI.activity.LessonCompletedActivity;
-import DucThuan.duolingo.UI.activity.LessonListActivity;
 import DucThuan.duolingo.UI.tasks.MutipleChoice;
 import DucThuan.duolingo.UI.tasks.TSTaskActivity;
 import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
