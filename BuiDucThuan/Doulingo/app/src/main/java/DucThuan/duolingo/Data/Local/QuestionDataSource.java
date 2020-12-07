@@ -42,6 +42,19 @@ public class QuestionDataSource implements DataSource.Local {
         question.add("Họ thích cơm");
         question.add("Anh ấy thích nước cam");
         question.add("Tôi thích trà");
+        question.add("Tôi là người Việt Nam");
+        question.add("Tôi thích bạn");
+        question.add("Xin chào");
+        question.add("Xin vui lòng cho cà phê");
+        question.add("Cô ấy muốn sữa");
+        question.add("Tôi không có đường");
+        question.add("Anh ấy cao");
+        question.add("Cô ấy thấp");
+        question.add("Tôi cao");
+        question.add("Tôi béo");
+        question.add("Cô ấy gầy");
+        question.add("Tôi muốn uống nước");
+        question.add("Họ muốn cà phê");
 
         //Answer
         answer.add("They eat rice");
@@ -53,6 +66,19 @@ public class QuestionDataSource implements DataSource.Local {
         answer.add("They like rice");
         answer.add("He likes orange juice");
         answer.add("I like tea");
+        answer.add("I am Vietnamese");
+        answer.add("I like you");
+        answer.add("Hello");
+        answer.add("Coffee please");
+        answer.add("She wants milk");
+        answer.add("I don't have sugar");
+        answer.add("He is tall");
+        answer.add("She is short");
+        answer.add("I am tall");
+        answer.add("I am fat");
+        answer.add("She is thin");
+        answer.add("I want drink water");
+        answer.add("They want coffee");
 
         choice1 = answer;
         choice2 = answer;

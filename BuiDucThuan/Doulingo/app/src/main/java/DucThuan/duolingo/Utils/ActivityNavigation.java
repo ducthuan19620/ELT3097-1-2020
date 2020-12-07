@@ -23,7 +23,7 @@ public class ActivityNavigation {
 
     public ActivityNavigation(Context context) {
 
-        this.context = context;
+         this.context = context;
 
         initData();
     }
@@ -39,9 +39,9 @@ public class ActivityNavigation {
     }
 
     private void initData() {
-        activities.add(WordTaskActivity.class);
-        activities.add(TSTaskActivity.class);
         activities.add(MutipleChoice.class);
+        activities.add(TSTaskActivity.class);
+        activities.add(WordTaskActivity.class);
     }
 
     public void takeToRandomTask() {
@@ -53,7 +53,6 @@ public class ActivityNavigation {
     }
 
     public void lessonCompleted() {
-
         Intent intent = new Intent(context, LessonCompletedActivity.class);
         context.startActivity(intent);
     }

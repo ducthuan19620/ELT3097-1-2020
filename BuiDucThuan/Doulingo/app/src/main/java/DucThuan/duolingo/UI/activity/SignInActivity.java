@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,7 +28,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import DucThuan.duolingo.R;
-import DucThuan.duolingo.Utils.ActivityNavigation;
+import DucThuan.duolingo.UI.activity.LessonListActivity.LessonListActivity;
+import DucThuan.duolingo.UI.activity.SelectLanguageActivity.SelectLanguageActivity;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,6 +60,9 @@ public class SignInActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
 
+    public static final String EXTRA_TEXT = "com.example.application.example.EXTRA_TEXT";
+    public static final String EXTRA_NUMBER = "com.example.application.example.EXTRA_NUMBER";
+    int login = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,7 +79,7 @@ public class SignInActivity extends AppCompatActivity {
         mAuth = Injection.providesAuthHelper().getAuthInstance();
 
         authUser();
-//        instantiateGoogle();
+        instantiateGoogle();
         googleSignInListener();
 
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -111,8 +116,9 @@ public class SignInActivity extends AppCompatActivity {
                                                     Toast.LENGTH_SHORT).show();
 
                                         } else {
-
+                                            login = 1;
                                             Intent intent = new Intent(SignInActivity.this, LessonListActivity.class);
+                                            intent.putExtra(EXTRA_NUMBER, login);
                                             startActivity(intent);
                                         }
                                     }
@@ -168,12 +174,12 @@ public class SignInActivity extends AppCompatActivity {
 
     private void instantiateGoogle() {
 
-//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestIdToken(getString(R.string.default_web_client_id))
-//                .requestEmail()
-//                .build();
-//
-//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
     private void googleSignInListener() {
@@ -201,7 +207,12 @@ public class SignInActivity extends AppCompatActivity {
 
             } catch (ApiException e) {
 
-                Toast.makeText(context, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
+                login = 1;
+                //Toast.makeText(context, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SignInActivity.this, LessonListActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra(EXTRA_NUMBER, login);
+                startActivity(intent);
             }
         }
     }
@@ -218,7 +229,8 @@ public class SignInActivity extends AppCompatActivity {
                             //take me to main page
                             Toast.makeText(context, "itworked", Toast.LENGTH_SHORT).show();
 
-                            ActivityNavigation.getInstance(SignInActivity.this).takeToRandomTask();
+                            Intent intent = new Intent(SignInActivity.this, SelectLanguageActivity.class);
+                            startActivity(intent);
 
                         } else {
 
@@ -226,5 +238,11 @@ public class SignInActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    @Override
+    protected void onStop() {
+        finish();
+        super.onStop();
     }
 }

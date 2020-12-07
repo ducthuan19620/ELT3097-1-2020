@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/default_light_grey_bg">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/gray_bottom_border">
+
+        <TextView
+            android:id="@+id/current_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textSize="17sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"/>
+
+        <Button
+            android:id="@+id/button_close"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_task_close"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp">
+
+                <DucThuan.duolingo.Utils.CustomProgressBar
+                    android:id="@+id/basic_bar"
+                    style="@style/lesson_bar"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    style="@style/lesson_bar_text"
+                    android:layout_below="@id/basic_bar"
+                    android:layout_centerHorizontal="true"
+                    android:text="Cơ bản1" />
+
+                <Button
+                    android:id="@+id/basic1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/basic1" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <DucThuan.duolingo.Utils.CustomProgressBar
+                        android:id="@+id/phrases_bar"
+                        style="@style/lesson_bar"
+                        android:layout_alignParentEnd="true"/>
+
+                    <TextView
+                        style="@style/lesson_bar_text"
+                        android:layout_below="@id/phrases_bar"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="5dp"
+                        android:text="Cơ bản2" />
+
+                    <Button
+                        android:id="@+id/basic2"
+                        android:layout_width="73dp"
+                        android:layout_height="74dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginVertical="3dp"
+                        android:background="@drawable/basic2" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp">
+
+                    <DucThuan.duolingo.Utils.CustomProgressBar
+                        android:id="@+id/greeting_bar"
+                        style="@style/lesson_bar"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        style="@style/lesson_bar_text"
+                        android:layout_below="@id/greeting_bar"
+                        android:layout_alignParentStart="true"
+                        android:paddingStart="5dp"
+                        android:text="Cơ bản3" />
+
+                    <Button
+                        android:id="@+id/basic3"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginVertical="2dp"
+                        android:background="@drawable/basic3" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <DucThuan.duolingo.Utils.CustomProgressBar
+                        android:id="@+id/food_bar"
+                        style="@style/lesson_bar"
+                        android:layout_alignParentEnd="true"/>
+
+                    <TextView
+                        style="@style/lesson_bar_text"
+                        android:layout_alignStart="@+id/food_bar"
+                        android:layout_below="@+id/food_bar"
+                        android:layout_marginStart="8dp"
+                        android:text="Món ăn" />
+
+                    <Button
+                        android:id="@+id/food"
+                        android:layout_width="72dp"
+                        android:layout_height="73dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginVertical="3dp"
+                        android:background="@drawable/food" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp">
+
+                    <DucThuan.duolingo.Utils.CustomProgressBar
+                        android:id="@+id/animal_bar"
+                        style="@style/lesson_bar"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        style="@style/lesson_bar_text"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/animal_bar"
+                        android:layout_marginStart="2dp"
+                        android:text="Động vật" />
+
+                    <Button
+                        android:id="@+id/animal"
+                        android:layout_width="71dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginVertical="5dp"
+                        android:background="@drawable/animal" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="8dp">
+
+                <DucThuan.duolingo.Utils.CustomProgressBar
+                    android:id="@+id/clothing_bar"
+                    style="@style/lesson_bar"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    style="@style/lesson_bar_text"
+                    android:layout_below="@id/clothing_bar"
+                    android:layout_centerHorizontal="true"
+                    android:text="Trang phục" />
+
+                <Button
+                    android:id="@+id/clothing"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/clothing" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

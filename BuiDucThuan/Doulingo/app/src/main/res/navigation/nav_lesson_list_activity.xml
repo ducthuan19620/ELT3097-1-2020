@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_lesson_list_activity"
+    app:startDestination="@id/lessonListFragment">
+
+    <fragment
+        android:id="@+id/lessonListFragment"
+        android:name="DucThuan.duolingo.UI.activity.LessonListActivity.LessonListFragment"
+        android:label="fragment_lesson_list"
+        tools:layout="@layout/fragment_lesson_list" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="DucThuan.duolingo.UI.activity.LessonListActivity.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/rankFragment"
+        android:name="DucThuan.duolingo.UI.activity.LessonListActivity.RankFragment"
+        android:label="fragment_rank"
+        tools:layout="@layout/fragment_rank" />
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="DucThuan.duolingo.UI.activity.LessonListActivity.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
+</navigation>

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.R;
 import DucThuan.duolingo.UI.activity.PickDailyGoalActivity;
+import DucThuan.duolingo.UI.activity.QuestionWelcome.Question1;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,9 +23,9 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     private static final String TAG = "LanguageAdapter";
 
     String[] languages = {
-            "Spanish", "Portuguese", "Swedish", "French",
-            "German", "Chinese", "Japanese", "Korean", "Italian",
-            "Dutch", "Irish", "Danish"};
+            "English", "Spanish", "French", "German",
+            "Italian", "Japanese", "Chinese", "Russian",
+            "Korean", "Potuguese", "Arabic", "Dutch", "Swedish"};
 
     Repository repository;
     Context context;
@@ -55,7 +56,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
 
                 repository.setNewLanguage(language.toLowerCase());
 
-                Intent intent = new Intent(context, PickDailyGoalActivity.class);
+                Intent intent = new Intent(context, Question1.class);
                 context.startActivity(intent);
             }
         });

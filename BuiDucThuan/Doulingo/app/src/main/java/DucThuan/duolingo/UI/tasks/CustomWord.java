@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.LinearLayout;
-
+/*
+    Duc Thuan ^^
+ */
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 

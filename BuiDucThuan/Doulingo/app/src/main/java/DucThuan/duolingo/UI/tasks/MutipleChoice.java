@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -23,8 +22,8 @@ import java.util.Random;
 import DucThuan.duolingo.Data.Repository;
 import DucThuan.duolingo.Model.QuestionModel;
 import DucThuan.duolingo.R;
-import DucThuan.duolingo.UI.activity.LessonListActivity;
-import DucThuan.duolingo.UI.tasks.WordTask.WordTaskActivity;
+import DucThuan.duolingo.UI.activity.LessonCompletedActivity;
+import DucThuan.duolingo.UI.activity.LessonListActivity.LessonListActivity;
 import DucThuan.duolingo.Utils.ActivityNavigation;
 import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
@@ -66,6 +65,8 @@ public class MutipleChoice extends AppCompatActivity {
 
     int progressBarValue;
     int state1 = 0, state2 = 0, state3 = 0, stateChoose = 0;
+
+    ActivityNavigation activityNavigation;
 
     Repository repository;
 
@@ -252,7 +253,7 @@ public class MutipleChoice extends AppCompatActivity {
 
                     if (checkChoice().getCurrentTextColor() == (getColor(R.color.blue_background))) {
 
-                        /*Toast.makeText(context, "You Are Correct!", Toast.LENGTH_SHORT).show();*/
+                        /*Toast.makeText(context, "Thuần chào mọi người!!!", Toast.LENGTH_SHORT).show();*/
 
                         taskNotice.setVisibility(view.VISIBLE);
                         taskNotice.setBackgroundColor(getColor(R.color.notice_true));
@@ -272,7 +273,7 @@ public class MutipleChoice extends AppCompatActivity {
 
                     } else {
 
-                        /*Toast.makeText(context, "That's not correct!" + questionModel.getAnswer(), Toast.LENGTH_SHORT).show();*/
+                        /*Toast.makeText(context, "Thuần sửa mãi mới được đó!!!" + questionModel.getAnswer(), Toast.LENGTH_SHORT).show();*/
 
                         taskNotice.setVisibility(view.VISIBLE);
                         taskNotice.setBackgroundColor(getColor(R.color.notice_false));
@@ -311,6 +312,11 @@ public class MutipleChoice extends AppCompatActivity {
 
                     } else {
 
+                        Intent intent = new Intent(context, LessonCompletedActivity.class);
+                        startActivity(intent);
+
+                        //ActivityNavigation.getInstance(context).lessonCompleted();
+
                         progressBarValue = 0;
 
                         Hawk.put("progressBarValue", progressBarValue);
@@ -338,6 +344,7 @@ public class MutipleChoice extends AppCompatActivity {
                                 Hawk.put("progressBarValue", progressBarValue);
 
                                 Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
                         })
@@ -363,6 +370,7 @@ public class MutipleChoice extends AppCompatActivity {
                         Hawk.put("progressBarValue", progressBarValue);
 
                         Intent intent = new Intent(MutipleChoice.this, LessonListActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }
                 })
