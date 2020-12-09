@@ -42,7 +42,7 @@ public class HelloActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-            },5500);
+            },5300);
         } else {
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -51,7 +51,7 @@ public class HelloActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-            },5500);
+            },5300);
         }
 
 
