@@ -34,6 +34,10 @@ import DucThuan.duolingo.Utils.Injection;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.File;
+
 public class SignInActivity extends AppCompatActivity {
 
     @BindView(R.id.email)
@@ -57,12 +61,12 @@ public class SignInActivity extends AppCompatActivity {
     Context context = SignInActivity.this;
 
     FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
 
-    public static final String EXTRA_TEXT = "com.example.application.example.EXTRA_TEXT";
-    public static final String EXTRA_NUMBER = "com.example.application.example.EXTRA_NUMBER";
-    int login = 0;
+    private String FILE_NAME = "signin";
+    private String FILE_CONTENT = "1";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -116,9 +120,7 @@ public class SignInActivity extends AppCompatActivity {
                                                     Toast.LENGTH_SHORT).show();
 
                                         } else {
-                                            login = 1;
                                             Intent intent = new Intent(SignInActivity.this, LessonListActivity.class);
-                                            intent.putExtra(EXTRA_NUMBER, login);
                                             startActivity(intent);
                                         }
                                     }
@@ -207,11 +209,18 @@ public class SignInActivity extends AppCompatActivity {
 
             } catch (ApiException e) {
 
-                login = 1;
+                try {
+                    FileOutputStream fOut = openFileOutput(FILE_NAME, MODE_PRIVATE);
+                    fOut.write(FILE_CONTENT.getBytes());
+                    fOut.close();
+                    File fileDir = new File(getFilesDir(), FILE_NAME);
+                }
+                catch (Exception e1){
+                    e1.printStackTrace();
+                }
+
                 //Toast.makeText(context, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignInActivity.this, LessonListActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra(EXTRA_NUMBER, login);
                 startActivity(intent);
             }
         }

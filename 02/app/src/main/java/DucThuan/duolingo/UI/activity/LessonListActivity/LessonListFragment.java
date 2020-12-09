@@ -15,7 +15,10 @@ import android.widget.Button;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import java.io.File;
+
 import DucThuan.duolingo.R;
+import DucThuan.duolingo.UI.activity.WelcomeActivity;
 import DucThuan.duolingo.UI.tasks.MutipleChoice;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +33,7 @@ public class LessonListFragment extends Fragment {
 
     Button basic1;
     Button buttonClose;
+    private String FILE_NAME = "signin";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -82,6 +86,28 @@ public class LessonListFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), MutipleChoice.class));
+            }
+        });
+
+        buttonClose = v.findViewById(R.id.button_close);
+        buttonClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(getActivity())
+                        .title("Bạn có muốn đăng xuất")
+                        .positiveText("ĐĂNG XUẤT")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
+                                File file = new File(getContext().getFilesDir(), FILE_NAME);
+                                getContext().deleteFile(FILE_NAME);
+
+                                startActivity(new Intent(getActivity(), WelcomeActivity.class));
+                            }
+                        })
+                        .negativeText("HỦY")
+                        .show();
             }
         });
 

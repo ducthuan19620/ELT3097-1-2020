@@ -24,11 +24,14 @@
 
         <Button
             android:id="@+id/button_close"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
-            android:background="@drawable/ic_task_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:background="@color/default_light_grey_bg"
+            android:text="Log out"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"/>
 
     </RelativeLayout>
 
